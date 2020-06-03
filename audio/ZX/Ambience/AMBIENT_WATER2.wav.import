@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AMBIENT_WATER2.wav-0f7d1509e182f4fb44fadabb62c9041b.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Ambience/AMBIENT_WATER2.wav"
+dest_files=[ "res://.import/AMBIENT_WATER2.wav-0f7d1509e182f4fb44fadabb62c9041b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

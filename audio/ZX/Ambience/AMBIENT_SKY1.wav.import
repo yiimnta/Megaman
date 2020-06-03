@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AMBIENT_SKY1.wav-54ac04a139a1b1e6bd98a76e89930a23.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Ambience/AMBIENT_SKY1.wav"
+dest_files=[ "res://.import/AMBIENT_SKY1.wav-54ac04a139a1b1e6bd98a76e89930a23.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

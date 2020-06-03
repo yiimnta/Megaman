@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SE_VENT_COMMON3.wav-1dfac97d3211b6084870045465a7ca16.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Vent SFX/Vent Common/SE_VENT_COMMON3.wav"
+dest_files=[ "res://.import/SE_VENT_COMMON3.wav-1dfac97d3211b6084870045465a7ca16.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

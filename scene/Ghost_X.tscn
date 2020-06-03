@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprite/x.png" type="Texture" id=1]
+[ext_resource path="res://script/Ghost_X.gd" type="Script" id=2]
+
+[node name="Ghost" type="Sprite"]
+show_behind_parent = true
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 1 )
+vframes = 9
+hframes = 16
+script = ExtResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]

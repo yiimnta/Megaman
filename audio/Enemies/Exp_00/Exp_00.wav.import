@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Exp_00.wav-281954b73741a122449126a6d4155311.sample"
+
+[deps]
+
+source_file="res://audio/Enemies/Exp_00/Exp_00.wav"
+dest_files=[ "res://.import/Exp_00.wav-281954b73741a122449126a6d4155311.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

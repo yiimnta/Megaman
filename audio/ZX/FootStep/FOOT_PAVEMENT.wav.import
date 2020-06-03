@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FOOT_PAVEMENT.wav-cb0238a9401823d9585a8d403ba0164d.sample"
+
+[deps]
+
+source_file="res://audio/ZX/FootStep/FOOT_PAVEMENT.wav"
+dest_files=[ "res://.import/FOOT_PAVEMENT.wav-cb0238a9401823d9585a8d403ba0164d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

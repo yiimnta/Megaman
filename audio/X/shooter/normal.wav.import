@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/normal.wav-867cc29743c39a13a9984502b9edee8c.sample"
+
+[deps]
+
+source_file="res://audio/X/shooter/normal.wav"
+dest_files=[ "res://.import/normal.wav-867cc29743c39a13a9984502b9edee8c.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

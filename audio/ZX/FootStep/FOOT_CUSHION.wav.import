@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FOOT_CUSHION.wav-d855df2b40cbfd11c38868c50fa7ce14.sample"
+
+[deps]
+
+source_file="res://audio/ZX/FootStep/FOOT_CUSHION.wav"
+dest_files=[ "res://.import/FOOT_CUSHION.wav-d855df2b40cbfd11c38868c50fa7ce14.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

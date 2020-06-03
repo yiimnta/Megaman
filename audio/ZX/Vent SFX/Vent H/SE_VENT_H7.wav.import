@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SE_VENT_H7.wav-5b0e312c8f7eaa225d79b6ce0a4030b2.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Vent SFX/Vent H/SE_VENT_H7.wav"
+dest_files=[ "res://.import/SE_VENT_H7.wav-5b0e312c8f7eaa225d79b6ce0a4030b2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

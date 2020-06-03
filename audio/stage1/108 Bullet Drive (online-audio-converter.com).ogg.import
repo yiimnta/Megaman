@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/108 Bullet Drive (online-audio-converter.com).ogg-b7e919609e062a404b867f0ae3daf684.oggstr"
+
+[deps]
+
+source_file="res://audio/stage1/108 Bullet Drive (online-audio-converter.com).ogg"
+dest_files=[ "res://.import/108 Bullet Drive (online-audio-converter.com).ogg-b7e919609e062a404b867f0ae3daf684.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

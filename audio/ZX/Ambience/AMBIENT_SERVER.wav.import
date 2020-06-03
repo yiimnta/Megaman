@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AMBIENT_SERVER.wav-25628959157d372bdd34f4eb4e6cfbd2.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Ambience/AMBIENT_SERVER.wav"
+dest_files=[ "res://.import/AMBIENT_SERVER.wav-25628959157d372bdd34f4eb4e6cfbd2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

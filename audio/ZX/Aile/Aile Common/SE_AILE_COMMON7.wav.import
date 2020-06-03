@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SE_AILE_COMMON7.wav-dda848bd6e688d648903f6d0646ecdcf.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Aile/Aile Common/SE_AILE_COMMON7.wav"
+dest_files=[ "res://.import/SE_AILE_COMMON7.wav-dda848bd6e688d648903f6d0646ecdcf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FOOT_SAND.wav-a3e0ff8e44da358d061d40e68a2e0b92.sample"
+
+[deps]
+
+source_file="res://audio/ZX/FootStep/FOOT_SAND.wav"
+dest_files=[ "res://.import/FOOT_SAND.wav-a3e0ff8e44da358d061d40e68a2e0b92.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

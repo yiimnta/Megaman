@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/FOOT_FOREST.wav-eb33e2d720cd6d6f2a8953e6ef313666.sample"
+
+[deps]
+
+source_file="res://audio/ZX/FootStep/FOOT_FOREST.wav"
+dest_files=[ "res://.import/FOOT_FOREST.wav-eb33e2d720cd6d6f2a8953e6ef313666.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

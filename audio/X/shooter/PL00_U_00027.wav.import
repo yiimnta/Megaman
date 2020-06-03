@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/PL00_U_00027.wav-31b7fd9a7aa19d11f3509d1a2634f7d2.sample"
+
+[deps]
+
+source_file="res://audio/X/shooter/PL00_U_00027.wav"
+dest_files=[ "res://.import/PL00_U_00027.wav-31b7fd9a7aa19d11f3509d1a2634f7d2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

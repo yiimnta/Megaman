@@ -1,0 +1,280 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://sprite/bullet_2.png" type="Texture" id=1]
+[ext_resource path="res://script/Bullet_X_AnimationTree.gd" type="Script" id=2]
+[ext_resource path="res://script/Bullet_X.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Die"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 43, 44, 43 ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 1.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 5, 6, 7, 5, 6, 7 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bullet:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 11, 3.50627 ), Vector2( 11, 3.50627 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 37.0, 37.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3, 0.5, 0.7, 1.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.89403, 0.493713 ), Vector2( 8.89403, 0.493713 ), Vector2( 29.5509, -1.53139 ), Vector2( 28.4259, -2.09392 ), Vector2( 30.0572, -2.03767 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bullet:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ), Vector2( 2, 2 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 35, 36, 37, 38, 39, 40, 41, 42, 40, 41, 42, 40, 41, 42 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Collision:shape:radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ 5.44064, 6.443, 9.48579, 9.48579, 9.48579 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.1, 0.4, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.91913, -0.012558 ), Vector2( 5.91913, -0.012558 ), Vector2( 11.9945, 0.493713 ), Vector2( 11.9945, 0.493713 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Bullet:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.5, 1.5 ), Vector2( 1.5, 1.5 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+length = 0.3
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Bullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Bullet:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 9.5314, 0.506271 ), Vector2( 7.5314, 0.506271 ), Vector2( 7.51884, 0.518814 ), Vector2( 7, 0.506271 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Collision:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 5.44064, 5.44064 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Collision:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 5.91913, -0.012558 ), Vector2( 5.91913, -0.012558 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Bullet:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1.3, 1.3 ), Vector2( 1.3, 1.3 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "Die"
+
+[sub_resource type="AnimationNodeAnimation" id=6]
+animation = "big"
+
+[sub_resource type="AnimationNodeAnimation" id=7]
+animation = "normal"
+
+[sub_resource type="AnimationNodeAnimation" id=8]
+animation = "small"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=9]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=10]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=11]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=12]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=13]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=14]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=15]
+
+[sub_resource type="AnimationNodeStateMachine" id=16]
+states/Die/node = SubResource( 5 )
+states/Die/position = Vector2( 520, 87 )
+states/big/node = SubResource( 6 )
+states/big/position = Vector2( 422, 176 )
+states/normal/node = SubResource( 7 )
+states/normal/position = Vector2( 333, 62 )
+states/small/node = SubResource( 8 )
+states/small/position = Vector2( 223, 176 )
+transitions = [ "small", "normal", SubResource( 9 ), "normal", "big", SubResource( 10 ), "big", "small", SubResource( 11 ), "normal", "small", SubResource( 12 ), "big", "Die", SubResource( 13 ), "normal", "Die", SubResource( 14 ), "small", "Die", SubResource( 15 ) ]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=17]
+
+[sub_resource type="CircleShape2D" id=18]
+radius = 37.5
+
+[node name="Bullet_X" type="Area2D" groups=[
+"Player",
+]]
+scale = Vector2( 1.3, 1.3 )
+z_index = 100
+script = ExtResource( 3 )
+
+[node name="Animation_Bullet" type="AnimationPlayer" parent="."]
+anims/Die = SubResource( 1 )
+anims/big = SubResource( 2 )
+anims/normal = SubResource( 3 )
+anims/small = SubResource( 4 )
+
+[node name="Bullet" type="Sprite" parent="."]
+position = Vector2( 11, 3.50627 )
+scale = Vector2( 2.2, 2.2 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 1 )
+vframes = 4
+hframes = 16
+
+[node name="AnimationTree_Bullet" type="AnimationTree" parent="."]
+tree_root = SubResource( 16 )
+anim_player = NodePath("../Animation_Bullet")
+parameters/playback = SubResource( 17 )
+script = ExtResource( 2 )
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2( 1.89403, 0.493713 )
+shape = SubResource( 18 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( 8, 0 )
+[connection signal="area_entered" from="." to="." method="_on_Bullet_X_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_Bullet_X_body_entered"]
+[connection signal="animation_finished" from="Animation_Bullet" to="." method="_on_Animation_Bullet_animation_finished"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/charge_max.wav-d50fd99d1735bbbed96abaaae97d0279.sample"
+
+[deps]
+
+source_file="res://audio/X/shooter/charge_max.wav"
+dest_files=[ "res://.import/charge_max.wav-d50fd99d1735bbbed96abaaae97d0279.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

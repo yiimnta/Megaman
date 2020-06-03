@@ -1,0 +1,108 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://sprite/x/111.png" type="Texture" id=1]
+[ext_resource path="res://sprite/game.png" type="Texture" id=2]
+[ext_resource path="res://sprite/over.png" type="Texture" id=3]
+[ext_resource path="res://script/GameOver.gd" type="Script" id=4]
+[ext_resource path="res://audio/game_over.ogg" type="AudioStream" id=5]
+[ext_resource path="res://audio/title_screen/accept.wav" type="AudioStream" id=6]
+
+[sub_resource type="Animation" id=3]
+resource_name = "Run"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -164.3, 220.072 ), Vector2( 305.99, 220.072 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Run"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 961.683, 224.594 ), Vector2( 489.232, 224.594 ) ]
+}
+
+[node name="GameOver" type="CanvasLayer"]
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GAME" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="GAME"]
+position = Vector2( 305.99, 220.072 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="GAME/Sprite"]
+anims/Run = SubResource( 3 )
+
+[node name="OVER" type="Node2D" parent="."]
+
+[node name="Sprite" type="Sprite" parent="OVER"]
+position = Vector2( 489.232, 224.594 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OVER/Sprite"]
+anims/Run = SubResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 283.405
+margin_top = 567.0
+margin_right = 489.405
+margin_bottom = 581.0
+text = "[ Enter to return to Main Menu ]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+autoplay = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+
+[node name="Accept" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 336.015
+margin_top = 374.595
+margin_right = -406.985
+margin_bottom = -204.405
+rect_scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+stretch_mode = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]

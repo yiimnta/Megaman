@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/SE_AILE_H7.wav-d89e6bc23b862d4cdd9b5ec3c6cb5dc8.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Aile/Aile H/SE_AILE_H7.wav"
+dest_files=[ "res://.import/SE_AILE_H7.wav-d89e6bc23b862d4cdd9b5ec3c6cb5dc8.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

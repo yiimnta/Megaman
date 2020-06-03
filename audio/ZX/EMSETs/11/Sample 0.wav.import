@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sample 0.wav-071cd91fa89b56d40cfbb59a46f3be52.sample"
+
+[deps]
+
+source_file="res://audio/ZX/EMSETs/11/Sample 0.wav"
+dest_files=[ "res://.import/Sample 0.wav-071cd91fa89b56d40cfbb59a46f3be52.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

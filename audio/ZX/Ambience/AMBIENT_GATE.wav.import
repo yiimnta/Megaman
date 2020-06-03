@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/AMBIENT_GATE.wav-9d6a4ef6fc77c689215477656285822e.sample"
+
+[deps]
+
+source_file="res://audio/ZX/Ambience/AMBIENT_GATE.wav"
+dest_files=[ "res://.import/AMBIENT_GATE.wav-9d6a4ef6fc77c689215477656285822e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

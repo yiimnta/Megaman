@@ -1,0 +1,129 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://sprite/Stage1/tileset/stage1.tres" type="TileSet" id=1]
+[ext_resource path="res://scene/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://script/Mission_1/BossStage1.gd" type="Script" id=3]
+[ext_resource path="res://scene/Chip.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/Chat_Dialog.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scene/ScreenShake.tscn" type="PackedScene" id=6]
+[ext_resource path="res://sprite/Stage1/darkfantasy.png" type="Texture" id=7]
+[ext_resource path="res://img/stage1/Ground.png" type="Texture" id=8]
+[ext_resource path="res://audio/Enemies/Boss/Eathwake.wav" type="AudioStream" id=9]
+[ext_resource path="res://scene/Mission1/RockFall.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scene/Mission1/Boss.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scene/Warning.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scene/HeathBar.tscn" type="PackedScene" id=13]
+
+[node name="Stage" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( -152.459, 492.935 )
+z_index = 1
+camera_limit = [ 0, 840, 600, 0 ]
+
+[node name="Chip" parent="." instance=ExtResource( 4 )]
+position = Vector2( 701.073, 454.497 )
+
+[node name="TileMap" type="TileMap" parent="." groups=[
+"Ground",
+]]
+modulate = Color( 0.682353, 0.682353, 0.682353, 1 )
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131079, 4, 0, -131078, 4, 0, -131077, 4, 0, -131076, 4, 0, -131075, 4, 0, -131074, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 4, 0, -196606, 4, 0, -196605, 4, 0, -196604, 4, 0, -196603, 4, 0, -196602, 4, 0, -196601, 4, 0, -196600, 4, 0, -196599, 4, 0, -196598, 4, 0, -196597, 4, 0, -196596, 4, 0, -196595, 4, 0, -196594, 4, 0, -196593, 4, 0, -196592, 4, 0, -196591, 4, 0, -196590, 4, 0, -196589, 4, 0, -196588, 4, 0, -196587, 4, 0, -196586, 4, 0, -196585, 4, 0, -196584, 4, 0, -196583, 4, 0, -196582, 4, 0, -196581, 4, 0, -196580, 4, 0, -65543, 4, 0, -65542, 4, 0, -65541, 4, 0, -65540, 4, 0, -65539, 4, 0, -65538, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 4, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 4, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 4, 0, -131061, 4, 0, -131060, 4, 0, -131059, 4, 0, -131058, 4, 0, -131057, 4, 0, -131056, 4, 0, -131055, 4, 0, -131054, 4, 0, -131053, 4, 0, -131052, 4, 0, -131051, 4, 0, -131050, 4, 0, -131049, 4, 0, -131048, 4, 0, -131047, 4, 0, -131046, 4, 0, -131045, 4, 0, -131044, 4, 0, -7, 4, 0, -6, 7, 0, -5, 7, 0, -4, 7, 0, -3, 7, 0, -2, 7, 0, -1, 7, 0, -65536, 7, 0, -65535, 7, 0, -65534, 7, 0, -65533, 7, 0, -65532, 7, 0, -65531, 7, 0, -65530, 7, 0, -65529, 7, 0, -65528, 7, 0, -65527, 7, 0, -65526, 7, 0, -65525, 7, 0, -65524, 7, 0, -65523, 7, 0, -65522, 7, 0, -65521, 7, 0, -65520, 7, 0, -65519, 7, 0, -65518, 7, 0, -65517, 7, 0, -65516, 7, 0, -65515, 7, 0, -65514, 7, 0, -65513, 7, 0, -65512, 4, 0, -65511, 4, 0, -65510, 4, 0, -65509, 4, 0, -65508, 4, 0, 24, 3, 0, 25, 4, 0, 26, 4, 0, 27, 4, 0, 28, 4, 0, 65560, 3, 0, 65561, 4, 0, 65562, 4, 0, 65563, 4, 0, 65564, 4, 0, 131096, 3, 0, 131097, 4, 0, 131098, 4, 0, 131099, 4, 0, 131100, 4, 0, 196632, 3, 0, 196633, 4, 0, 196634, 4, 0, 196635, 4, 0, 196636, 4, 0, 262168, 3, 0, 262169, 4, 0, 262170, 4, 0, 262171, 4, 0, 262172, 4, 0, 327704, 3, 0, 327705, 4, 0, 327706, 4, 0, 327707, 4, 0, 327708, 4, 0, 393240, 3, 0, 393241, 4, 0, 393242, 4, 0, 393243, 4, 0, 393244, 4, 0, 458776, 3, 0, 458777, 4, 0, 458778, 4, 0, 458779, 4, 0, 458780, 4, 0, 524312, 3, 0, 524313, 4, 0, 524314, 4, 0, 524315, 4, 0, 524316, 4, 0, 589848, 3, 0, 589849, 4, 0, 589850, 4, 0, 589851, 4, 0, 589852, 4, 0, 655384, 3, 0, 655385, 4, 0, 655386, 4, 0, 655387, 4, 0, 655388, 4, 0, 720920, 3, 0, 720921, 4, 0, 720922, 4, 0, 720923, 4, 0, 720924, 4, 0, 786456, 3, 0, 786457, 4, 0, 786458, 4, 0, 786459, 4, 0, 786460, 4, 0, 851992, 3, 0, 851993, 4, 0, 851994, 4, 0, 851995, 4, 0, 851996, 4, 0, 917528, 3, 0, 917529, 4, 0, 917530, 4, 0, 917531, 4, 0, 917532, 4, 0, 983064, 3, 0, 983065, 4, 0, 983066, 4, 0, 983067, 4, 0, 983068, 4, 0, 1114104, 4, 0, 1114105, 4, 0, 1114106, 1, 0, 1114107, 1, 0, 1114108, 1, 0, 1114109, 1, 0, 1114110, 1, 0, 1114111, 1, 0, 1048576, 1, 0, 1048577, 1, 0, 1048578, 1, 0, 1048579, 1, 0, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 4, 0, 1048601, 4, 0, 1048602, 4, 0, 1048603, 4, 0, 1048604, 4, 0, 1179640, 4, 0, 1179641, 4, 0, 1179642, 4, 0, 1179643, 4, 0, 1179644, 4, 0, 1179645, 4, 0, 1179646, 4, 0, 1179647, 4, 0, 1114112, 4, 0, 1114113, 4, 0, 1114114, 4, 0, 1114115, 4, 0, 1114116, 4, 0, 1114117, 4, 0, 1114118, 4, 0, 1114119, 4, 0, 1114120, 4, 0, 1114121, 4, 0, 1114122, 4, 0, 1114123, 4, 0, 1114124, 4, 0, 1114125, 4, 0, 1114126, 4, 0, 1114127, 4, 0, 1114128, 4, 0, 1114129, 4, 0, 1114130, 4, 0, 1114131, 4, 0, 1114132, 4, 0, 1114133, 4, 0, 1114134, 4, 0, 1114135, 4, 0, 1114136, 4, 0, 1114137, 4, 0, 1114138, 4, 0, 1114139, 4, 0, 1114140, 4, 0, 1245176, 4, 0, 1245177, 4, 0, 1245178, 4, 0, 1245179, 4, 0, 1245180, 4, 0, 1245181, 4, 0, 1245182, 4, 0, 1245183, 4, 0, 1179648, 4, 0, 1179649, 4, 0, 1179650, 4, 0, 1179651, 4, 0, 1179652, 4, 0, 1179653, 4, 0, 1179654, 4, 0, 1179655, 4, 0, 1179656, 4, 0, 1179657, 4, 0, 1179658, 4, 0, 1179659, 4, 0, 1179660, 4, 0, 1179661, 4, 0, 1179662, 4, 0, 1179663, 4, 0, 1179664, 4, 0, 1179665, 4, 0, 1179666, 4, 0, 1179667, 4, 0, 1179668, 4, 0, 1179669, 4, 0, 1179670, 4, 0, 1179671, 4, 0, 1179672, 4, 0, 1179673, 4, 0, 1179674, 4, 0, 1179675, 4, 0, 1179676, 4, 0, 1310712, 4, 0, 1310713, 4, 0, 1310714, 4, 0, 1310715, 4, 0, 1310716, 4, 0, 1310717, 4, 0, 1310718, 4, 0, 1310719, 4, 0, 1245184, 4, 0, 1245185, 4, 0, 1245186, 4, 0, 1245187, 4, 0, 1245188, 4, 0, 1245189, 4, 0, 1245190, 4, 0, 1245191, 4, 0, 1245192, 4, 0, 1245193, 4, 0, 1245194, 4, 0, 1245195, 4, 0, 1245196, 4, 0, 1245197, 4, 0, 1245198, 4, 0, 1245199, 4, 0, 1245200, 4, 0, 1245201, 4, 0, 1245202, 4, 0, 1245203, 4, 0, 1245204, 4, 0, 1245205, 4, 0, 1245206, 4, 0, 1245207, 4, 0, 1245208, 4, 0, 1245209, 4, 0, 1245210, 4, 0, 1245211, 4, 0, 1245212, 4, 0 )
+
+[node name="Position_Run1" type="Position2D" parent="."]
+position = Vector2( 394.916, 503.01 )
+
+[node name="Position_Run2" type="Position2D" parent="."]
+position = Vector2( 577.916, 499.01 )
+
+[node name="Position_Dash1" type="Position2D" parent="."]
+position = Vector2( 199.484, 502.215 )
+
+[node name="Chat_Dialog" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -143.291, 189.285 )
+bb_top = [ "What is this?", "I could feel a strong source of energy hidden within it.", "Bring it back to base X.", "Understood!" ]
+bb_bot = [  ]
+order = [ true, true, true, true ]
+avatars = [ "x_2.png", "x_1.png", "system.png", "x_4.png" ]
+labels = [ "X", "X", "System", "X" ]
+
+[node name="Chat_Dialog_2" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -592.974, 7.13501 )
+bb_top = [ "what's up" ]
+bb_bot = [  ]
+order = [ true ]
+avatars = [ "x_2.png" ]
+labels = [ "X" ]
+
+[node name="Chat_Dialog_3" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -592.974, 7.13501 )
+bb_top = [ "Hahaha..." ]
+bb_bot = [  ]
+order = [ true ]
+avatars = [ "boss_ms1.png" ]
+labels = [ "Unknown" ]
+
+[node name="Chat_Dialog_4" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -592.974, 7.13501 )
+bb_top = [ "Who are you?", "I'm Ultro, I'm here to kill you and take this ELF.", "Then you are my enemy.", "A weakling like you is an ant", "Hm...." ]
+bb_bot = [  ]
+order = [ true, true, true, true, true ]
+avatars = [ "x_2.png", "boss_ms1.png", "x_2.png", "boss_ms1.png", "x_3.png" ]
+labels = [ "X", "Ultro", "X", "Ultro", "X" ]
+
+[node name="ScreenShake" parent="." instance=ExtResource( 6 )]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 387.069, 280.738 )
+scale = Vector2( 1.7, 1.8 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 7 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.00784314, 0.439216, 1 )
+position = Vector2( 343.429, 294.096 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 8 )
+
+[node name="Audio_EW" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+
+[node name="RockFall" parent="." instance=ExtResource( 10 )]
+position = Vector2( 19.5323, -2.23737 )
+z_index = -1
+ys = 16
+rock_row = 16
+
+[node name="Boss_MS1" parent="." instance=ExtResource( 11 )]
+position = Vector2( 718.646, 39.4027 )
+
+[node name="Position_B_Roll1" type="Position2D" parent="."]
+position = Vector2( 127.204, 139.591 )
+
+[node name="Position_B_Roll2" type="Position2D" parent="."]
+position = Vector2( 732.334, 241.207 )
+
+[node name="Position_B_Roll3" type="Position2D" parent="."]
+position = Vector2( 127.522, 347.106 )
+
+[node name="Position_B_Roll4" type="Position2D" parent="."]
+position = Vector2( 575.308, 451.462 )
+
+[node name="Warning" parent="." instance=ExtResource( 12 )]
+position = Vector2( 49.7372, -1.91556 )
+
+[node name="Waiting_Warning" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+[connection signal="timeout" from="Waiting_Warning" to="." method="_on_Waiting_Warning_timeout"]
