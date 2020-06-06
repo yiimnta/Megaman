@@ -11,7 +11,7 @@ var is_game_over = false
 var is_first_time = true
 
 func _ready():
-	is_start = true
+	is_start = false
 	transform_x = TRANSFORM_X.instance()
 	transform_x.position = $Player.position
 	transform_x.position.x +=25

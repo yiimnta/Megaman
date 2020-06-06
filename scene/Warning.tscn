@@ -1,8 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://sprite/warning.png" type="Texture" id=1]
-[ext_resource path="res://scene/Warning.gd" type="Script" id=2]
+[ext_resource path="res://script/Warning.gd" type="Script" id=2]
 [ext_resource path="res://audio/stage1/boss_stage/warning.ogg" type="AudioStream" id=3]
+
 
 [sub_resource type="Animation" id=1]
 resource_name = "Hide"

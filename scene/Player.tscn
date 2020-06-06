@@ -640,6 +640,8 @@ one_shot = true
 [node name="Timer_Create_Ghost" type="Timer" parent="."]
 wait_time = 0.03
 one_shot = true
+
+[node name="Audio_X" type="AudioStreamPlayer" parent="."]
 [connection signal="timeout" from="Timer_Climb_Down" to="." method="_on_Timer_Climb_Down_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer_Shoot" to="." method="_on_Timer_Shoot_timeout"]

@@ -20,3 +20,7 @@ func screen_shake(length, power, priority):
 
 func _on_Shake_tween_completed(object, key):
 	self.priority = 0
+
+func playAudio():
+	if !$Audio.playing:
+		$Audio.play()

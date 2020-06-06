@@ -83,7 +83,7 @@ hframes = 3
 anims/Idle = SubResource( 1 )
 
 [node name="Chat_Dialog" parent="." instance=ExtResource( 5 )]
-bb_top = [ "X...! Are you there?", "There was an abnormal flow of energy in the southern forest, so hurry there to confirm it.", "Be careful!" ]
+bb_top = [ "X...! Are you there?", "Detecting a significant source of energy in western forest. Check out immediately.", "Be careful!" ]
 bb_bot = [ "Yes. What's going on?", "Okay, I'll go right away!", "Don't worry!" ]
 order = [ true, false, true, false, true, false ]
 avatars = [ "system.png", "vent_2.png", "system.png", "vent_2.png", "system.png", "vent_1.png" ]

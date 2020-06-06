@@ -5,13 +5,17 @@ var audio_foot_step = load("res://audio/ZX/FootStep/FOOT_COMMON.wav")
 var TRANSFORM_X = preload("res://scene/Transform_X.tscn")
 var music_stage = load("res://audio/stage1/boss_stage/bg.ogg")
 var music_boss_fight = load("res://audio/stage1/boss_stage/boss-fight.ogg")
+var music_mission_complete = load("res://audio/mission-complete.wav")
 var music_warning = load("res://audio/stage1/boss_stage/warning.ogg")
+var RETURN_BASE = preload("res://scene/PlayerReturnBase.tscn")
 export var is_start = true
 var transform_x = null
 var audioSp = null
 var is_game_over = false
 var is_first_time = true
 var state = null
+var is_boss_dead = false
+var is_complete = false
 
 enum{
 	RUN_1,
@@ -26,7 +30,11 @@ enum{
 	B_IDLE_10,
 	WARNING,
 	WAITING_ATTACK,
-	FIGHT
+	FIGHT,
+	COMPLETE,
+	END,
+	END_1,
+	END_2
 }
 var ani
 
@@ -38,6 +46,7 @@ func _ready():
 	$Chat_Dialog_2.visible = false
 	$Chat_Dialog_3.visible = false
 	$Chat_Dialog_4.visible = false
+	$Complete.visible = false
 	$Player.is_cutscreen = true
 	ani.is_cutscreen = true
 	$Boss_MS1.visible = false
@@ -102,7 +111,7 @@ func _process(delta):
 				$Boss_MS1.visible = true
 				$Boss_MS1.is_stop = false
 				$Boss_MS1.is_using_sk2 = true
-				$Boss_MS1.animation.play("Skill_2")
+				$Boss_MS1.animation.play("Skill_3")
 				$Audio_EW.stop()
 		B_ROLL_6:
 			$Boss_MS1.translate(Vector2(-$Boss_MS1.speed_roll * delta, 0))
@@ -153,6 +162,7 @@ func _process(delta):
 		WARNING:
 			if $Chat_Dialog_4.isEnd() and Input.is_action_just_pressed("ui_accept"):
 				$Chat_Dialog_4.visible = false
+				$Player.get_node("X/Audio_Stage").stop()
 				$Warning.is_run = true
 				$Warning.visible = true
 				state = WAITING_ATTACK
@@ -160,6 +170,49 @@ func _process(delta):
 		WAITING_ATTACK:
 			pass
 		FIGHT:
+			if $Boss_MS1.is_dead:
+				state = COMPLETE
+				$Player.is_cutscreen = true
+				ani.is_cutscreen = true
+				$Timer_Waiting_Boss_Deah.start()
+				$Player/X/Audio_Stage.stop()
+				ani.change_state(ani.IDLE)
+				if $Player.position.x < $Boss_MS1.position.x:
+					$Player/X.flip_h = false
+				else:
+					$Player/X.flip_h = true
+		COMPLETE:
+			if is_boss_dead:
+				$Complete.visible = true
+				$Complete.is_active = true
+				$Player/X/Audio_Stage.stream = music_mission_complete
+				$Player/X/Audio_Stage.play()
+				state = END
+				$Timer_Waiting_Complete.start()
+		END:
+			if is_complete:
+				ani.change_state(ani.RUN)
+				if $Player.position.x < $Chip.position.x:
+					$Player.translate(Vector2($Player.SPEED*delta, 0))
+					$Player/X.flip_h = false
+				if $Player.position.x > $Chip.position.x:
+					$Player.translate(Vector2(-$Player.SPEED*delta, 0))
+					$Player/X.flip_h = true
+				if !$Player.audioFS.is_playing():
+					$Player.audioFS.play()
+				if ($Player/X.flip_h and $Player.position.x <= $Chip.position.x) or (!$Player/X.flip_h and $Player.position.x >= $Chip.position.x):
+					state = END_1
+					$Player.audioFS.stop()
+					ani.change_state(ani.IDLE)
+		END_1:
+			var rtb = RETURN_BASE.instance()
+			rtb.position = $Player.global_position
+			rtb.position.y-= 20
+			$Player.visible = false
+			$Chip.visible = false
+			add_child(rtb)
+			state = END_2
+		END_2:
 			pass
 
 func _on_Waiting_Warning_timeout():
@@ -171,3 +224,10 @@ func _on_Waiting_Warning_timeout():
 	$Boss_MS1.is_cutscene = false
 	$Boss_MS1.is_stop = false
 	$CanvasLayer/Control.visible = true
+
+
+func _on_Timer_Waiting_Boss_Deah_timeout():
+	is_boss_dead = true
+
+func _on_Timer_Waiting_Complete_timeout():
+	is_complete = true

@@ -1,7 +1,8 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprite/enemies/BOSS_MISSION_1/boss.png" type="Texture" id=1]
-[ext_resource path="res://scene/Mission1/Boss.gd" type="Script" id=2]
+[ext_resource path="res://script/Mission_1/Boss.gd" type="Script" id=2]
+[ext_resource path="res://audio/Enemies/Boss/death.wav" type="AudioStream" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Angry"
@@ -57,7 +58,7 @@ tracks/3/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "Die"
-length = 1.5
+length = 4.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -266,7 +267,7 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=6]
-resource_name = "Skill_2"
+resource_name = "Skill_3"
 length = 0.3
 loop = true
 tracks/0/type = "value"
@@ -319,8 +320,23 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id=7]
+resource_name = "Skill_3_E"
 length = 1.2
-loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 29, 28, 27, 26, 25 ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:frame")
 tracks/0/interp = 1
@@ -370,78 +386,27 @@ tracks/3/keys = {
 "values": [ Vector2( 3.94119, 11.5688 ), Vector2( 3.94119, 11.5688 ), Vector2( 3.94119, 11.5688 ), Vector2( 3.94119, 11.5688 ) ]
 }
 
-[sub_resource type="Animation" id=8]
-resource_name = "Skill_3"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ 50 ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("Check_Ground:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0, 11.569 ), Vector2( 0, 7.33333 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("CollisionShape2D:shape:extents")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 18.8838, 29.3852 ), Vector2( 18.8838, 29.3852 ) ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("CollisionShape2D:position")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0, 0.3 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 3.94119, 11.5688 ), Vector2( 3.94119, 11.5688 ) ]
-}
-
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 18.8838, 29.3852 )
 
-[sub_resource type="CircleShape2D" id=10]
-radius = 22.3802
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 192.101, 30.119 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 66.9446, 30.119 )
+[sub_resource type="CircleShape2D" id=11]
+radius = 22.3802
 
 [node name="Boss_MS1" type="Area2D" groups=[
 "Enemy",
 ]]
 scale = Vector2( 1.5, 1.5 )
 script = ExtResource( 2 )
+health = 400
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 vframes = 7
 hframes = 8
-frame = 50
+frame = 44
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/Angry = SubResource( 1 )
@@ -449,32 +414,13 @@ anims/Die = SubResource( 2 )
 anims/Idle = SubResource( 3 )
 anims/Run = SubResource( 4 )
 anims/Skill_1 = SubResource( 5 )
-anims/Skill_2 = SubResource( 6 )
-anims/Skill_2_R = SubResource( 7 )
-anims/Skill_3 = SubResource( 8 )
+anims/Skill_3 = SubResource( 6 )
+anims/Skill_3_E = SubResource( 7 )
+anims/Skill_3_R = SubResource( 8 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.94119, 11.5688 )
 shape = SubResource( 9 )
-
-[node name="Timer_Skill1" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-
-[node name="Timer_Hurt" type="Timer" parent="."]
-wait_time = 0.3
-one_shot = true
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-
-[node name="Check_Ground" type="Area2D" parent="." groups=[
-"No_Collision",
-]]
-position = Vector2( 0, 11.569 )
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Check_Ground"]
-position = Vector2( 1.94123, 13.3727 )
-shape = SubResource( 10 )
 
 [node name="Check_Skill_1" type="Area2D" parent="." groups=[
 "No_Collision",
@@ -483,23 +429,99 @@ modulate = Color( 0.0627451, 0, 0, 1 )
 self_modulate = Color( 0.0156863, 0.00392157, 0.00392157, 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Check_Skill_1"]
-position = Vector2( -44.3372, -2.84361 )
+position = Vector2( -0.353964, -2.84361 )
+shape = SubResource( 10 )
+
+[node name="Check_Ground" type="Area2D" parent="." groups=[
+"No_Collision",
+]]
+position = Vector2( 0, 7.33333 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Check_Ground"]
+position = Vector2( 1.94123, 13.3727 )
 shape = SubResource( 11 )
+
+[node name="Timer_Skill1" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Timer_Skill1_Repare" type="Timer" parent="."]
+wait_time = 0.65
+one_shot = true
+
+[node name="Timer_Skill1_Delay" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="Timer_Hurt" type="Timer" parent="."]
+wait_time = 0.7
+one_shot = true
 
 [node name="Timer_Delay" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [node name="Check_Wall" type="RayCast2D" parent="."]
 position = Vector2( 0, 8.66667 )
 enabled = true
 cast_to = Vector2( -27, 0 )
+
+[node name="Pos_Skill1_L" type="Position2D" parent="."]
+position = Vector2( -45.4681, 10.172 )
+
+[node name="Pos_Skill1_R" type="Position2D" parent="."]
+position = Vector2( 52.9465, 8.14505 )
+
+[node name="Pos_Skill2_L_1" type="Position2D" parent="."]
+visible = false
+position = Vector2( -184, 29.3333 )
+
+[node name="Pos_Skill2_L_2" type="Position2D" parent="."]
+visible = false
+position = Vector2( -361.372, 31.3333 )
+
+[node name="Timer_Skill2" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_Skill2_Delay" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="Timer_Skill2_Throw" type="Timer" parent="."]
+wait_time = 1.7
+one_shot = true
+
+[node name="Timer_Skill3" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="Timer_Pause" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Timer_Death" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[node name="AudioDeath" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="body_entered" from="." to="." method="_on_Boss_MS1_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_Boss_MS1_body_exited"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
-[connection signal="timeout" from="Timer_Skill1" to="." method="_on_Timer_Skill1_timeout"]
-[connection signal="timeout" from="Timer_Hurt" to="." method="_on_Timer_Hurt_timeout"]
+[connection signal="body_entered" from="Check_Skill_1" to="." method="_on_Check_Skill_1_body_entered"]
 [connection signal="body_entered" from="Check_Ground" to="." method="_on_Check_Ground_body_entered"]
 [connection signal="body_exited" from="Check_Ground" to="." method="_on_Check_Ground_body_exited"]
-[connection signal="body_entered" from="Check_Skill_1" to="." method="_on_Check_Skill_1_body_entered"]
+[connection signal="timeout" from="Timer_Skill1" to="." method="_on_Timer_Skill1_timeout"]
+[connection signal="timeout" from="Timer_Skill1_Repare" to="." method="_on_Timer_Skill1_Repare_timeout"]
+[connection signal="timeout" from="Timer_Skill1_Delay" to="." method="_on_Timer_Skill1_Dekay_timeout"]
+[connection signal="timeout" from="Timer_Hurt" to="." method="_on_Timer_Hurt_timeout"]
 [connection signal="timeout" from="Timer_Delay" to="." method="_on_Timer_Delay_timeout"]
+[connection signal="timeout" from="Timer_Skill2" to="." method="_on_Timer_Skill2_timeout"]
+[connection signal="timeout" from="Timer_Skill2_Delay" to="." method="_on_Timer_Skill2_Delay_timeout"]
+[connection signal="timeout" from="Timer_Skill2_Throw" to="." method="_on_Timer_Skill2_Throw_timeout"]
+[connection signal="timeout" from="Timer_Skill3" to="." method="_on_Timer_Skill3_timeout"]
+[connection signal="timeout" from="Timer_Pause" to="." method="_on_Timer_Pause_timeout"]
+[connection signal="timeout" from="Timer_Death" to="." method="_on_Timer_Death_timeout"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://sprite/Stage1/tileset/stage1.tres" type="TileSet" id=1]
 [ext_resource path="res://scene/Player.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://scene/Mission1/Boss.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scene/Warning.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scene/HeathBar.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scene/Complete.tscn" type="PackedScene" id=14]
 
 [node name="Stage" type="Node2D"]
 script = ExtResource( 3 )
@@ -46,7 +47,7 @@ position = Vector2( 199.484, 502.215 )
 [node name="Chat_Dialog" parent="." instance=ExtResource( 5 )]
 visible = false
 position = Vector2( -143.291, 189.285 )
-bb_top = [ "What is this?", "I could feel a strong source of energy hidden within it.", "Bring it back to base X.", "Understood!" ]
+bb_top = [ "What is it?", "I can feel a strong source of energy hidden within it.", "Take that to base! X.", "Oke" ]
 bb_bot = [  ]
 order = [ true, true, true, true ]
 avatars = [ "x_2.png", "x_1.png", "system.png", "x_4.png" ]
@@ -55,7 +56,7 @@ labels = [ "X", "X", "System", "X" ]
 [node name="Chat_Dialog_2" parent="." instance=ExtResource( 5 )]
 visible = false
 position = Vector2( -592.974, 7.13501 )
-bb_top = [ "what's up" ]
+bb_top = [ "what's up?" ]
 bb_bot = [  ]
 order = [ true ]
 avatars = [ "x_2.png" ]
@@ -73,7 +74,7 @@ labels = [ "Unknown" ]
 [node name="Chat_Dialog_4" parent="." instance=ExtResource( 5 )]
 visible = false
 position = Vector2( -592.974, 7.13501 )
-bb_top = [ "Who are you?", "I'm Ultro, I'm here to kill you and take this ELF.", "Then you are my enemy.", "A weakling like you is an ant", "Hm...." ]
+bb_top = [ "Who are you?", "Ultron. I am here to take over the ELF. It could help my boss dominate the whole world.", "Well, you can not do it easily.", "Really?, you think you can hinder my work?", "Hm...." ]
 bb_bot = [  ]
 order = [ true, true, true, true, true ]
 avatars = [ "x_2.png", "boss_ms1.png", "x_2.png", "boss_ms1.png", "x_3.png" ]
@@ -98,13 +99,14 @@ texture = ExtResource( 8 )
 stream = ExtResource( 9 )
 
 [node name="RockFall" parent="." instance=ExtResource( 10 )]
-position = Vector2( 19.5323, -2.23737 )
+position = Vector2( 21.5323, 1.76263 )
 z_index = -1
 ys = 16
 rock_row = 16
 
 [node name="Boss_MS1" parent="." instance=ExtResource( 11 )]
 position = Vector2( 718.646, 39.4027 )
+health = 350
 
 [node name="Position_B_Roll1" type="Position2D" parent="."]
 position = Vector2( 127.204, 139.591 )
@@ -126,4 +128,18 @@ wait_time = 4.0
 one_shot = true
 
 [node name="CanvasLayer" parent="." instance=ExtResource( 13 )]
+
+[node name="Timer_Waiting_Boss_Deah" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="Complete" parent="." instance=ExtResource( 14 )]
+visible = false
+position = Vector2( -3.00372, 3.77655 )
+
+[node name="Timer_Waiting_Complete" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
 [connection signal="timeout" from="Waiting_Warning" to="." method="_on_Waiting_Warning_timeout"]
+[connection signal="timeout" from="Timer_Waiting_Boss_Deah" to="." method="_on_Timer_Waiting_Boss_Deah_timeout"]
+[connection signal="timeout" from="Timer_Waiting_Complete" to="." method="_on_Timer_Waiting_Complete_timeout"]

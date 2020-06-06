@@ -195,11 +195,11 @@ position = Vector2( 2568.3, 199.468 )
 rotation = 1.5708
 
 [node name="Spike16" parent="Spike" instance=ExtResource( 15 )]
-position = Vector2( 2408.64, 439.025 )
+position = Vector2( 2408.64, 484.025 )
 rotation = 1.5708
 
 [node name="Spike14" parent="Spike" instance=ExtResource( 15 )]
-position = Vector2( 2408.02, 451.376 )
+position = Vector2( 2408.02, 496.376 )
 rotation = 1.5708
 
 [node name="Go_Boss" type="Area2D" parent="." groups=[

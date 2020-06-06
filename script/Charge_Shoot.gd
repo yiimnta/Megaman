@@ -26,7 +26,7 @@ func _process(delta):
 			is_charge = false
 			visible = false
 			$AnimationPlayer.stop()
-			$AudioStreamPlayer2D.stop()
+			$AudioStreamPlayer.stop()
 			charge_shoot = 1
 
 func _on_AnimationPlayer_animation_finished(anim_name):
@@ -34,14 +34,14 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		$AnimationPlayer.queue("Normal")
 		charge_shoot = 2
 	elif anim_name == "Normal" :
-		$AudioStreamPlayer2D.stream = audio_charge_max
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer.stream = audio_charge_max
+		$AudioStreamPlayer.play()
 		$AnimationPlayer.queue("Big")
 		charge_shoot = 3
 
 func _on_Timer_timeout():
 	if is_charge:
 		$AnimationPlayer.queue("Small")
-		$AudioStreamPlayer2D.stream = audio_charge
-		$AudioStreamPlayer2D.play()
+		$AudioStreamPlayer.stream = audio_charge
+		$AudioStreamPlayer.play()
 		visible = true

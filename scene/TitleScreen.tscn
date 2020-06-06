@@ -5,7 +5,7 @@
 [ext_resource path="res://fonts/SnesItalic-vmAPZ.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://audio/title_screen/The One And Only - Mega Man X Opening Stage Remix (online-audio-converter.com).ogg" type="AudioStream" id=4]
 [ext_resource path="res://sprite/title_screen/MMZXLogo.png" type="Texture" id=5]
-[ext_resource path="res://video/title screen/Mega-Man-Zero-3-Cannonball-Lyrics.ogv" type="VideoStream" id=6]
+[ext_resource path="res://video/title screen/media.io_mega-man-zero-3-cannonball.ogv" type="VideoStream" id=6]
 [ext_resource path="res://audio/ZX/Common/SE_COMMON2.wav" type="AudioStream" id=8]
 [ext_resource path="res://audio/title_screen/accept.wav" type="AudioStream" id=9]
 
@@ -180,6 +180,7 @@ text = "  Press \"Esc\" to return to the main screen!"
 
 [node name="Audio_BG" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
+volume_db = 10.254
 autoplay = true
 
 [node name="TimerVideo" type="Timer" parent="."]

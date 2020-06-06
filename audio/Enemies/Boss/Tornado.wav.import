@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Tornado.wav-6471bddb7d414ad08a1d10392d6f2bf7.sample"
+
+[deps]
+
+source_file="res://audio/Enemies/Boss/Tornado.wav"
+dest_files=[ "res://.import/Tornado.wav-6471bddb7d414ad08a1d10392d6f2bf7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -106,8 +106,10 @@ func _physics_process(delta):
 
 			var dam = 0
 			for i in enemies_entered:
-				dam += get_node(i).collisionDamage
-
+				if weakref(get_node(i)).get_ref():
+					dam += get_node(i).collisionDamage
+				else:
+					enemies_entered.erase(get_node(i))
 			if dam > 0:
 				takingDamage(dam)
 
@@ -226,7 +228,9 @@ func shoot():
 	elif charge_shoot == 2:
 		audioShooter.stream = load("res://audio/X/shooter/normal.wav")
 	else:
-		audioShooter.stream = load("res://audio/X/shooter/big.wav")
+		if !$Audio_X.playing:
+			$Audio_X.stream = load("res://audio/X/shooter/big.wav")
+			$Audio_X.play()
 
 	audioShooter.play()
 	var bullet = BULLET.instance()
@@ -284,7 +288,7 @@ func hurt():
 	$Timer_immunity.start()
 
 func takingDamage(value):
-	if is_immunity:
+	if is_immunity or is_cutscreen:
 		return
 	health -= value
 	if health <= 0:
